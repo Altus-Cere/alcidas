@@ -62,7 +62,7 @@ def main() -> None:
 
     logger.info("Starting ALCIDAS gateway...")
     runner = AlcidasGatewayRunner()
-    asyncio.run(runner.run())
+    asyncio.run(runner.start())
 
 
 if __name__ == "__main__":
