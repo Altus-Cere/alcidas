@@ -58,8 +58,10 @@ def main() -> None:
     from dotenv import load_dotenv
     load_dotenv(override=False)  # load .env if present, env vars take precedence
 
+    from alcidas.auth.license_client import validate_on_boot
     from alcidas.core.gateway import AlcidasGatewayRunner
 
+    validate_on_boot()
     logger.info("Starting ALCIDAS gateway...")
     runner = AlcidasGatewayRunner()
     asyncio.run(runner.start())
